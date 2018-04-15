@@ -1,6 +1,6 @@
 # AWS API Gateway
 
-## what is the aws api gateway
+## what is the aws api gateway - concepts and capabilities of the API gateway  
 
 API Gateway -- Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. 
 
@@ -81,7 +81,60 @@ lifecycle of an API
 5 available near real-time  
 
 
+//--------------Use of HTTPS   
 
   
+//--------------Using AWS API Gateway with VPC    
+All AWS APIs are publicly accessible  
+cannot communicate with services inside a VPC unless a public endpoint is exposed  
+
+add an elastic IP to the EC2 instance, and direct the API gateway to the ealstic IP allowing us to use that as a backend service  
+
+
+//--------------throttling API calls  
+1 throttle by burst and rate limits  
+2 prevent overloading backedn services  
+
+
+//--------------throttling API calls  
+
+
+
+//--------------caching your API requests  
+1 configured pre stage  
+2 improve performance  
+3 reduce traffic  
+4 from 0.5GB to 237 GB
+5 additional billing charges apply  
+
+
+//--------------Billing  
+$3.5 per million API requests
+
++ 
+
+Data out charges:
+$0.09/GB for the first 10TB  
+$0.085/GB for the next 40TB  
+$0.07/GB for the enxt 100TB  
+$0.05/GB for the next 350TB
+
++ cache charges  
+0.5G $0.020/hour  
+1.6G $0.038/hour
+6.1G $0.2/hour
+...
+
+//--------------MOdule summary  
+1 concepts and capabilities  
+ 1) compatible backends  
+ 2) defined resources, methods, and stages  
+ 3) deployment lifecycle  
+
+monitoring  
+throttleing  
+caching  
+billing  
+
 
 
