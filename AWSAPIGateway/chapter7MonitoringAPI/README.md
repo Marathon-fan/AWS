@@ -38,12 +38,12 @@ in resources -> /order -> post -> method request-> API key required -> tick true
 also, in 
     GEt/{id}, -> method request-> API key required -> tick true
 
-then hit deploy API
+then hit deploy API(so that api key applys)
 
 then we use postman,
 
 when we set header
-"x-api-key":"ourAPIKey", then we get get access to  https://fzlvkzeda2.execute-api.ap-southeast-2.amazonaws.com/stage/order/ab956
+"x-api-key":"ourAPIKey", then we get get access to  url/stage/order/ab956
 
 
 //--------------enable cloudwatch logging
@@ -103,6 +103,14 @@ then in api gateway -> setttings -> CloudWatch log role ARN -> paste the role AR
 
 //--------------   creating the IAM role for cloudwatch logs
 
+use cloudwatch to log how api key is used
+
+
+//--------------   creating the IAM policy and role
+
+create the IAM policy  
+create the IAM role.  
+assign the role to API gateway.  
 
 
 
@@ -112,14 +120,6 @@ then in api gateway -> setttings -> CloudWatch log role ARN -> paste the role AR
 
 
 //--------------   
-
-
-
-
-
-
-//--------------   
-
 
 
 
