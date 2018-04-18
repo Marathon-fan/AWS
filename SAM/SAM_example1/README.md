@@ -1,6 +1,6 @@
-# AWS
+# AWS SAM(Serverless Application Model )
 
-1 install SAM(AWS Serverless Application Model )   
+1 install SAM(AWS Serverless Application Model )  and docker   
 
 2 write lambda function and SAM file(template.yaml)   
 
