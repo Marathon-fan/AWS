@@ -1,0 +1,90 @@
+
+
+# AWS::ApiGateway::Account
+# specifies the AWS Identity and Access Management (IAM) role that Amazon API Gateway (API Gateway) uses to write API logs to Amazon CloudWatch Logs (CloudWatch Logs).
+
+# AWS::ApiGateway::ApiKey
+# creates a unique key that you can distribute to clients who are executing Amazon API Gateway (API Gateway) Method resources that require an API key. 
+
+# AWS::ApiGateway::Authorizer
+# creates an authorization layer that Amazon API Gateway (API Gateway) activates for methods that have authorization enabled. 
+
+# AWS::ApiGateway::BasePathMapping
+# creates a base path that clients who call your Amazon API Gateway API must use in the invocation URL.
+
+# AWS::ApiGateway::ClientCertificate
+# creates a client certificate that Amazon API Gateway (API Gateway) uses to configure client-side SSL authentication for sending requests to the integration endpoint.
+
+# AWS::ApiGateway::Deployment
+#  deploys an Amazon API Gateway (API Gateway) RestApi resource to a stage so that clients can call the API over the Internet. The stage acts as an environment.
+
+# AWS::ApiGateway::DocumentationPart
+# creates a documentation part for an Amazon API Gateway API entity. 
+
+# AWS::ApiGateway::DocumentationVersion
+# creates a snapshot of the documentation for an Amazon API Gateway API entity. 
+
+# AWS::ApiGateway::DomainName
+# specifies a custom domain name for your API in Amazon API Gateway (API Gateway).
+
+# AWS::ApiGateway::GatewayResponse
+# creates a custom response for your API Gateway API. 
+
+# AWS::ApiGateway::Method
+# creates Amazon API Gateway (API Gateway) methods that define the parameters and body that clients must send in their requests.
+
+# AWS::ApiGateway::Model
+# defines the structure of a request or response payload for an Amazon API Gateway (API Gateway) method.
+
+# AWS::ApiGateway::RequestValidator
+# sets up basic validation rules for incoming requests to your API Gateway API.
+
+# AWS::ApiGateway::Resource
+# creates a resource in an Amazon API Gateway (API Gateway) API.
+
+# AWS::ApiGateway::RestApi
+# contains a collection of Amazon API Gateway resources and methods that can be invoked through HTTPS endpoints.
+
+# AWS::ApiGateway::Stage
+# creates a stage for an Amazon API Gateway (API Gateway) deployment.
+
+# AWS::ApiGateway::UsagePlan
+# specifies a usage plan for deployed Amazon API Gateway (API Gateway) APIs.
+
+# AWS::ApiGateway::UsagePlanKey
+# associates an Amazon API Gateway API key with an API Gateway usage plan
+
+# AWS::ApiGateway::VpcLink
+# specifies an API Gateway VPC link for a AWS::ApiGateway::RestApi to access resources in an Amazon Virtual Private Cloud (VPC)
+
+# 
+
+
+# creates Amazon API Gateway (API Gateway) methods that define the parameters and body that clients must send in their requests.
+Type: "AWS::ApiGateway::Method"
+Properties:
+  ApiKeyRequired: False
+  AuthorizationType: String
+  AuthorizerId: String
+  HttpMethod: String
+  Integration:
+    Integration
+  MethodResponses:
+    - MethodResponse
+  OperationName: String
+  RequestModels:
+    String: String
+  RequestParameters:
+    String: Boolean
+  RequestValidatorId: String
+  ResourceId: String
+  RestApiId: String
+
+# deploys an Amazon API Gateway (API Gateway) RestApi resource to a stage so that clients can call the API over the Internet. The stage acts as an environment.  
+Type: "AWS::ApiGateway::Deployment"
+Properties:
+  Description: String
+  RestApiId: String
+  StageDescription: StageDescription
+  StageName: String  
+
