@@ -1,6 +1,6 @@
 ##### GIT IGNORE for lendi platform ####
 
-# Common ignored files from the projects
+# Common ignored files from the projects -- scala
 **.iml
 **.class
 **.ipr
@@ -12,6 +12,8 @@
 **/dist/
 **.log
 **/build/
+
+
 
 
 
