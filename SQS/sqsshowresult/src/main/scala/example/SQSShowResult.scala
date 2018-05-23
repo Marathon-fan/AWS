@@ -3,8 +3,7 @@ package example
 import com.amazonaws.auth.{AWSStaticCredentialsProvider, BasicAWSCredentials, EnvironmentVariableCredentialsProvider}
 import com.amazonaws.regions.{Region, Regions}
 import com.amazonaws.services.sqs.AmazonSQSClientBuilder
-
-
+import com.amazonaws.services.sqs.model.Message
 
 
 object SQSShowResult extends App {
@@ -13,8 +12,6 @@ object SQSShowResult extends App {
     val AWS_ACCESS_KEY_ID = System.getenv("AWS_ACCESS_KEY_ID")
     val AWS_SECRET_ACCESS_KEY = System.getenv("AWS_SECRET_ACCESS_KEY")
     val basicCredentials = new BasicAWSCredentials(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)
-    //val derivedRegion:Regions =  Region.getRegion(Regions.AP_SOUTHEAST_2)
-
     val sqs = AmazonSQSClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(basicCredentials)).withRegion(Regions.AP_SOUTHEAST_2).build
       //sqs.setRegion(derivedRegion)
 
@@ -35,10 +32,14 @@ object SQSShowResult extends App {
   //----
   val messages = sqs.receiveMessage (queueUrl).getMessages
   messages match {
-    case list: List[String] => list.map(
-          message => println(message)
+    case list: com.amazonaws.internal.SdkInternalList[Message] => list.toArray.toList.foreach(
+          message => {
+            println()
+            println()
+            println(message)
+          }
       )
-    case _ => println("error")
+    case x: Any => println("error + " + x.getClass.toString)
   }
 
 
