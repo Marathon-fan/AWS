@@ -1,0 +1,63 @@
+#
+# Deployment Stack
+# Creates the API Gateway, Lambda, all roles, etc and maps them together.
+#
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+#Parameters:
+#  Environment:
+#    Description: The app env - used primiarly for naming things.
+#    Type: String
+#    AllowedValues:
+#      - "dev"
+#      - "test"
+#      - "int"
+#      - "uat"
+#      - "stage"
+#      - "prod"
+
+Resources:
+  DemoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java8
+      Handler: com.xxx.xxx.xxxxHandler::handler
+      CodeUri: ./target/scala-2.12/lendi-lambda-template-assembly-0.0.1.jar
+      MemorySize: 50000
+      Timeout: 500
+      Environment:
+        Variables:
+          LOG_LEVEL: WARN
+#      Events:
+#        RootRequest:
+#          Type: Api
+#          Properties:
+#            Path: /
+#            Method: get
+#            RestApiId: !Ref APIGateway  #Remove this is if you are doing automatic API Gateway setup.
+      Tracing:  Active
+      AutoPublishAlias: latest
+
+  #
+  # Manually defined API gateway instead of automatic (this is optional - based on your needs). You need this to setup authorization, etc on endpoints.
+  #
+#  APIGateway:
+#    Type: AWS::Serverless::Api
+#    Properties:
+#      Name: !Sub "demo-${Environment}"
+#      StageName: "published"
+#      DefinitionBody:
+#        swagger: "2.0"
+#        info:
+#          title: !Sub "demo-${Environment}"
+#        paths:
+#          /:
+#            get:
+#              responses: {}
+#              x-amazon-apigateway-integration:
+#                uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${DemoFunction.Arn}:latest/invocations"
+#                passthroughBehavior: "when_no_match"
+#                httpMethod: "POST"
+#                type: "aws_proxy"
+#                timeoutInMillis: 5000
