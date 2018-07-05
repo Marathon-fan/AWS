@@ -1,0 +1,68 @@
+
+
+$> docker build  -t marathonfan/debian .
+// use containers to build images(persistent) and remove containers
+
+each RUN command will create a new layer. we can chain RUN command to reduce layers created
+
+RUN apt-get update && apt-get install -y \
+    git \
+    vim
+
+$> docker build -t marathonfan/debian .
+
+RUN apt-get update && apt-get install -y \
+    git \
+    python \
+    vim
+CMD ["echo", "hello world"]
+
+//-------------Docker cache
+
+docker build -t xxx/xxx . --no-cahce=true
+
+
+
+
+//-------------COPY instruction
+
+COPY abc.txt /src/abc.txt
+
+
+//-------------ADD instrcution
+
+ADD can download files and unpack files
+
+
+//-------------push Images to Docker Hub
+https://hub.docker.com
+
+associate the image to docker hub
+
+$> docker images
+$> docker tag image_id docker_hub_repo_name/xx:1.01(version_number)
+
+$> docker tag 79f marathonfan/debian:1.01
+
+then 
+$> docker login --username=marathonfan
+$> password:
+
+finally
+$> docker push docker_hub_repo_name/xx:1.01(version_number)
+
+avoid using latest tag
+
+
+
+//-------------
+
+
+//-------------
+
+
+//-------------
+
+
+//-------------
+

@@ -1,0 +1,27 @@
+
+
+$> docker build -t dockerapp:v0.1 .
+
+$> docker run -d -p 5000:5000 image_id
+
+$> docker ps
+
+$> docker exec -it container_id bash
+
+$admin> ps aux
+
+
+//--------
+docker build -t dockerapp:v0.2 .
+
+
+//--------
+docker run -d --name redis redis:3.2.0
+
+docker build -t dockerapp:v0.3 .
+
+docker run -d -p 5000:5000 --link redis dockerapp:v0.3
+
+
+
+

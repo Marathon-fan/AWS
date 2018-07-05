@@ -1,0 +1,43 @@
+
+
+//----------write and run unit tests inside containers
+
+
+
+//----------continuous integration
+The whole purpose of continuous integration is that a build will be automatically tirggered when a commit is pushed to the central reposiroty so that if a defect is introduced to the code base we can identify it and correct it as soon as possible
+
+
+//----------Link CircleCI with Github Account for setting up a CI Workflow
+
+
+$> git clone git@github.com:Marathon-fan/dockerapp.git -b v0.6
+
+$> git checkout v0.6
+
+$> git checkout -b test-ci
+$> touch dummy.txt
+$> git add dummy.txt
+$> git commit -m "add dummy file to test circle build"
+$> git push --set-upstream origin test-ci
+
+
+//----------push docker images to DockerHub from CircleCI
+
+
+$> git add .circleci/config.yml
+$> git commit -m "push to Docker hub from circleCI"
+
+
+
+
+//----------
+
+
+//----------
+
+
+
+
+
+

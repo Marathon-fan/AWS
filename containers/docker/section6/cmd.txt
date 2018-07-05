@@ -1,0 +1,178 @@
+
+
+Deploy Docker Containers in Production
+
+//----------
+why running docker containers inside VMs?
+1 to address security concerns
+2 hardware level isolation
+
+docker machine
+1 provision new VM 
+2 install docker Engine
+3 configure docker client
+
+
+
+//----------Register Digital Ocean Account to Deploy Containerized Applications
+
+
+
+
+//----------deploy docker application to the Cloud with Docker Machine
+
+1 install docker machine in linux
+
+
+
+$> docker-machine create --driver digitalocean --digitalocean-access-token digitalOceanAPIToken new-machine-name(docker-app-machine)
+
+$> docker-machine env docker-app-machine
+
+$> eval $(docker-machine env docker-app-machine)
+
+$> docker info
+
+$> docker-compose -f prod.yml up -d   // deploy all the docker containers in the remote vm
+
+
+//----------Introduction to Docker Swarm and Set up Swarm cluster
+
+Docker Swarm is a tool that clusters many Docker Engines and schedules containers
+
+How Swarm cluster works
+1 to deploy your application to a swarm, you submit your service to a manager node
+2 the manager node dispatches units of work called tasks to worker nodes
+3 manager nodes also perform the orchestration and cluster management functions required to maintain the desired state of the swarm
+4 worker nodes received and execute tasks dispatched from manager nodes
+5 an agent runs on each worker node and reports on the tasks assigned to it. The worker node notifies the manager node of the current state of
+its assigned tasks so that the manager can maintain the desired state of each worker
+
+$> docker-machine create --driver digitalocean --digitalocean-access-token token swarm-manager
+then follow the instructions
+
+$> docker-machine create --driver digitalocean --digitalocean-access-token token swarm-node
+then follow the instructions
+
+$> docker-machine ls
+
+$> docker swarm init
+
+
+$> docker swarm init --advertise-addr 165.227.124.18
+
+$> docker-machine ssh swarm-node 
+
+$> docker swarm join --token SWMTKN-1-38zk0l4wiiu7cldla51myp8fctd8jr7m3ehaxr9ltkox5vtqng-7cnzrullbbcgdlz94khnbqrqq 165.227.124.18:2377
+
+recap:
+1 docker swarm init
+
+2 docker swarm join
+
+3 docker swarm leave
+
+
+//----------deploy docker app services to the cloud via docker swarm
+
+1 the services can be defined in our docker compose file
+2 the service includes:... 
+
+3 
+version: "3.3"
+services:
+   nginx: 
+      image: nginx: lastest
+      ports:
+          - "80:80"
+      deploy:
+         replicas: 3        # there instances of nginx
+         resources:
+            limits:
+             cpus: '0.1'
+             memory: 50M
+          restart_policy:
+             condition: on-failure
+
+
+4 docker stack
+1) a docker stack is a group of interrelated services that share dependencies, and can be orchestrated and scaled together
+2) 
+3) 
+4) in swarm mode,
+     we have to use docker stack command. you can think of docker stack as the docker compose in the swarm mode
+
+5 prod.yml
+version: "3.0"
+services:
+  dockerapp:
+    image:  marathonfan/dockerapp
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    deploy: 
+      replicas: 2
+  redis:
+    image: redis:3.2.0
+
+$> docker stack deploy --compose-file prod.yml dockerapp_stack
+
+$> docker stack ls
+
+$> docker stack services dockerapp_stack
+
+$> docker-machine ls
+
+
+how to update our services in produciton
+version: "3.0"
+services:
+  dockerapp:
+    image:  marathonfan/dockerapp
+    ports:
+      - "4000:5000"
+    depends_on:
+      - redis
+    deploy: 
+      replicas: 2
+  redis:
+    image: redis:3.2.0
+$> docker stack deploy --compose-file prod.yml dockerapp_stack
+Updating service dockerapp_stack_redis (id: qlf6m4iv7bnhckf3t89gm1o1h)
+Updating service dockerapp_stack_dockerapp (id: qnnyh4yhgyqf0gkjnwtsxrins)
+
+
+how to scale?
+version: "3.0"
+services:
+  dockerapp:
+    image:  marathonfan/dockerapp
+    ports:
+      - "4000:5000"
+    depends_on:
+      - redis
+    deploy: 
+      replicas: 2
+  redis:
+    image: redis:3.2.0
+    deploy: 
+      replicas: 2
+$> docker stack deploy --compose-file prod.yml dockerapp_stack
+
+Updating service dockerapp_stack_redis (id: qlf6m4iv7bnhckf3t89gm1o1h)
+Updating service dockerapp_stack_dockerapp (id: qnnyh4yhgyqf0gkjnwtsxrins)
+
+$> docker stack services dockerapp_stack
+
+$> docker stack rm dockerapp_stack
+
+remove vms indigital ocean
+
+//----------
+
+
+
+//----------
+
+
