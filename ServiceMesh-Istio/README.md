@@ -162,13 +162,30 @@ Systematic fault injection
 
 Get started - Deploy Kubernetes  
 Easiest approach: Launch in the cloud   
-GKE  
+GKE(Google Kubernetes Engine)  
 Azure  
 AWS with Kops  
 
 Or, launch on your own hardware  
 Vagrant/Ansible(kubespray)    
 Kubeadm/Minikube    
+
+
+
+```
+Installing Kubernetes on AWS with kops
+
+https://kubernetes.io/docs/setup/custom-cloud/kops/
+
+
+A Kubernetes cluster is a managed group of uniform VM instances for running Kubernetes.
+
+Google cloud   
+
+
+
+
+```
 
 
 
