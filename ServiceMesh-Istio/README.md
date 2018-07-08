@@ -157,6 +157,8 @@ Systematic fault injection
 ```
 
 
+![Example Microservice Application With Istio](./pics/ExampleMicroserviceApplicationWithIstio.png)
+
 
 
 ///////////////////////////////////////

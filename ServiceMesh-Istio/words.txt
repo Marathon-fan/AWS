@@ -1,0 +1,126 @@
+
+
+nugget
+noun [ C ] UK ​  /ˈnʌɡ.ɪt/ US ​  /ˈnʌɡ.ɪt/
+nugget noun [ C ] (SMALL PIECE)
+​
+a small roughly shaped piece, especially of gold
+
+​
+a small piece of chicken or fish that has been covered in breadcrumbs and fried:
+
+She won't eat anything except chicken nuggets and pizza.
+
+///////////////////////////////////////////////
+
+
+ingress
+noun [ C or U ] UK ​  /ˈɪn.ɡres/ US ​  /ˈɪn.ɡres/ formal
+​
+the act of entering something:
+
+There had been an ingress of water into the site.
+
+///////////////////////////////////////////////
+
+egress
+noun [ C or U ] UK ​  /ˈiː.ɡres/ US ​  /ˈiː.ɡres/ formal
+​
+the act or way of leaving a place:
+
+The main egress from the restaurant had been blocked off.
+
+
+///////////////////////////////////////////////
+
+
+canary
+noun [ C ] UK ​  /kəˈneə.ri/ US ​  /kəˈner.i/
+ipicture of canary
+​
+a small, yellow bird that is well known for its singing, sometimes kept as a pet
+
+
+In software testing, a canary is a push of programming code changes to a small group of end users who are unaware that they are receiving new code. Because the canary is only distributed to a small number of users, its impact is relatively small and changes can be reversed quickly should the new code prove to be buggy. Canary tests, which are often automated, are run after testing in a sandbox environment has been completed.
+
+In canary testing, a small subset of end users serves as a test group for updates. If anything in the update causes problems, it alerts the IT team before a large group of users feel the effects.
+
+
+///////////////////////////////////////////////
+
+
+tweak verb [ T ] (CHANGE SLIGHTLY)
+​
+to change something slightly, especially in order to make it more correct, effective, or suitable:
+
+The software is pretty much there - it just needs a little tweaking.
+You just need to tweak the last paragraph and then it's done.
+
+
+
+
+///////////////////////////////////////////////
+monkey testing
+
+
+In software testing, monkey testing is a technique where the user tests the application or system by providing random inputs and checking the behavior, or seeing whether the application or system will crash. Monkey testing is usually implemented as random, automated unit tests.
+
+
+
+///////////////////////////////////////////////
+
+
+sidecar
+noun [ C ] UK ​  /ˈsaɪd.kɑːr/ US ​  /ˈsaɪd.kɑːr/
+​
+a small, one-wheeled vehicle attached to the side of a motorcycle to hold a passenger
+
+
+
+///////////////////////////////////////////////
+
+
+
+
+
+
+///////////////////////////////////////////////
+
+
+
+
+
+
+///////////////////////////////////////////////
+
+
+
+
+
+
+///////////////////////////////////////////////
+
+
+
+
+
+
+///////////////////////////////////////////////
+
+
+
+
+
+
+///////////////////////////////////////////////
+
+
+
+
+
+
+///////////////////////////////////////////////
+
+
+
+
