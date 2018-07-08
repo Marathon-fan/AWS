@@ -160,6 +160,17 @@ Systematic fault injection
 ![Example Microservice Application With Istio](./pics/ExampleMicroserviceApplicationWithIstio.png)
 
 
+Get started - Deploy Kubernetes  
+Easiest approach: Launch in the cloud   
+GKE  
+Azure  
+AWS with Kops  
+
+Or, launch on your own hardware  
+Vagrant/Ansible(kubespray)    
+Kubeadm/Minikube    
+
+
 
 ///////////////////////////////////////
 
