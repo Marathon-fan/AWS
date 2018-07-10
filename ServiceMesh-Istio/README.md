@@ -197,5 +197,19 @@ Istio does not require any change to your application code. Istio deploys a spec
 This proxy, based on the popular, open source Envoy,  intercepts communication between microservices and is configured and managed using Istio's control plane functionality.
 
 
+///////////////////////////////////////
+
+
+mutual TLS
+
+TLS Encryption    
+TLS encryption was introduced to improve data security. While SSL was a good technology, security changes at a rapid rate, and that led to the need for better, more up-to-date security. TLS was built on the framework of SSL with significant improvements to the algorithms that govern the communications and handshake process.   
+
+TLS (Transport Layer Security) is just an updated, more secure, version of SSL. 
+
+
+
+
+
 
 
