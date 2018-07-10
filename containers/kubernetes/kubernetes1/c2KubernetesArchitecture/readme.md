@@ -194,8 +194,58 @@ labels rock
 
 
 /////////////////////////////////////     
+deployments
 
 
+
+A Deployment controller provides declarative updates for Pods and ReplicaSets.
+
+You describe a desired state in a Deployment object, and the Deployment controller changes the actual state to the desired state at a controlled rate. You can define Deployments to create new ReplicaSets, or to remove existing Deployments and adopt all their resources with new Deployments.
+
+```
+self documenting
+spec-once deploy-many
+simple rolling updates
+versioned
+
+
+rest objects
+deployed via YAML or JSON manifests 
+```
+
+Simple rolling updates and rollbacks
+```
+blue-green deployments
+canary releases
+simple versioned rollbacks
+```
+
+
+example   
+controllers/nginx-deployment.yaml(declarative)   
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.7.9
+        ports:
+        - containerPort: 80
+```
 
 //////////   
 
@@ -209,7 +259,19 @@ labels rock
 
 
 /////////////////////////////////////     
+Objects in the K8s API
 
+```
+Pods: automatic unit of scheduling
+
+Replication Controllers: scale pods, desired state etc...
+
+Deployments: RC + rolling updates, rollbacks...
+
+Services: Stable networking...
+
+
+```
 
 
 //////////   
