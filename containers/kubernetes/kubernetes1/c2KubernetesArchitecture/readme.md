@@ -11,7 +11,7 @@
 
 /////////////////////////////////////     
 //////////   
-Kubelet   (node)
+Kubelet   (node = minion)
 ```
 the main Kubernetes agent
 registers node with cluster
@@ -266,7 +266,7 @@ Pods: automatic unit of scheduling
 
 Replication Controllers: scale pods, desired state etc...
 
-Deployments: RC + rolling updates, rollbacks...
+Deployments: RC(Replication Controller) + rolling updates, rollbacks...
 
 Services: Stable networking...
 
