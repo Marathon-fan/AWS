@@ -31,6 +31,12 @@ minikube start --vm-driver=xhyve
 kubectl config current-context
 
 kubectl get nodes
+
+minikube dashboard
+
+minikube stop     // stop all the nodes
+
+minikube delete   // delete the local kubernetes cluster
 ```
 
 
