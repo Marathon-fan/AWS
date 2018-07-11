@@ -1,0 +1,57 @@
+
+
+1 Minikube
+
+2 Google Container Engine(GKE)
+
+3 AWS Provider
+
+4 Manual install
+
+## Minikube
+
+///////////////////////////
+VM: minikube    
+
+
+
+install minikube on mac
+```
+brew install kubectl   
+kubectl version --client  
+
+$ kubectl
+```
+
+
+//////////
+
+//////////
+
+//////////
+
+//////////
+
+//////////
+
+//////////
+
+//////////
+
+
+
+///////////////////////////
+
+//////////
+
+//////////
+
+//////////
+
+//////////
+
+//////////
+
+//////////
+
+//////////

@@ -1,0 +1,6 @@
+
+
+IPC namespace
+Interprocess Communication (ipc) - IPC namespaces isolate processes from SysV style inter-process communication. 
+
+
