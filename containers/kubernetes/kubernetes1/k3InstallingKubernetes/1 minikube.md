@@ -22,11 +22,15 @@ kubectl version --client
 
 brew cask install minikube
 
-brew install docker-machine-driver-xhyve
-sudo chown root:wheel /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-sudo chmod u+s /usr/local/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-hyperkit \
+&& chmod +x docker-machine-driver-hyperkit \
+&& sudo mv docker-machine-driver-hyperkit /usr/local/bin/ \
+&& sudo chown root:wheel /usr/local/bin/docker-machine-driver-hyperkit \
+&& sudo chmod u+s /usr/local/bin/docker-machine-driver-hyperkit
 
-minikube start --vm-driver=xhyve
+sudo rm -rf $HOME/.minikube
+
+minikube start --logtostderr --v=3 --vm-driver=hyperkit
 
 kubectl config current-context
 
@@ -38,6 +42,7 @@ minikube stop     // stop all the nodes
 
 minikube delete   // delete the local kubernetes cluster
 ```
+
 
 
 //////////

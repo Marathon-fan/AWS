@@ -1,28 +1,21 @@
 
 
-1 Minikube
-
-2 Google Container Engine(GKE)
-
-3 AWS Provider
-
-4 Manual install
-
-## Minikube
+# kops - Kubernetes operations
 
 ///////////////////////////
-VM: minikube    
 
+## pre-requisite  
+1 kubectl, kops, AWS CLI  
 
+2 IAM account in AWS with:   
+1) AmazonEC2FullAccess   
+2) AmazonRoute53FullAccess  
+3) AmazonS3FullAccess  
+4) IAMFullAccess    
+5) AmazonVPCFullAccess   
 
-install minikube on mac
-```
-brew install kubectl   
-kubectl version --client  
-
-$ kubectl
-```
-
+Properly configured DNS  
+(for the real world)  
 
 //////////
 

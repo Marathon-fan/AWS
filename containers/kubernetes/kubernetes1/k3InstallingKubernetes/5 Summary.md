@@ -1,35 +1,39 @@
 
 
-1 Minikube
 
-2 Google Container Engine(GKE)
-
-3 AWS Provider
-
-4 Manual install
-
-## Minikube
+## summary
 
 ///////////////////////////
-VM: minikube    
-
-
-
-install minikube on mac
+    
+Minikube
 ```
-brew install kubectl   
-kubectl version --client  
+Ideal for :
+1 Local dev environments
+2 Laptop/desktop installs
+3 NOT for production
 
-$ kubectl
+```    
+
+//////////
+Google Container Engine
+```
+Integrated with the Google Cloud
+Packaged Kubernetes
+Production grade
 ```
 
-
 //////////
-
+AWS with kops
+```
+Integrates with AWS
+Simple
+```
 //////////
-
-//////////
-
+Manual with kubeadm
+```
+$ kubeadm init
+$ kubeadm join --token <token>
+```
 //////////
 
 //////////
