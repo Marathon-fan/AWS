@@ -3,14 +3,13 @@ kind: ReplicationController
 metadata:
   name: hello-rc
 spec:
-  replicas: 10
+  replicas: 20
   selector:
-    matchLabels:
-      app: hello-world
+    app: hello-world
   template:
     metadata:
       labels:
-      app: hello-world
+        app: hello-world
     spec:
       containers:
       - name: hello-pod
