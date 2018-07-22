@@ -97,4 +97,13 @@ AWS_ACCESS_KEY_ID                       XXXXXXXXX
 
 ```
 
+## bitbucket pipeline and aws   
+```
+https://bitbucket.org/awslabs/aws-codedeploy-bitbucket-pipelines-python/src/master/
+
+https://bitbucket.org/awslabs/amazon-ecs-bitbucket-pipelines-python/src/master/
+
+https://www.youtube.com/watch?v=UcSChlLRsvo
+
+```
 
