@@ -1,6 +1,68 @@
 
 # how to use it
 
+## docker commands
+
+```
+docker ps
+```
+
+To show all containers use the given command:
+```
+docker ps -a
+```
+
+Copy a file from host to container:
+```
+$ docker cp foo.txt 72ca2488b353:/foo.txt
+```
+Copy a file from Docker container to host:
+```
+$ docker cp 72ca2488b353:/foo.txt foo.txt
+```
+
+```
+docker stop bea1edddf747
+```
+
+
+```
+To start an existing container which is stopped
+
+docker start <container-name/ID>
+```
+
+Docker inspect provides detailed information on constructs controlled by Docker.(like ip addr. etc)
+
+```
+docker inspect <container-name/ID>
+```
+
+Inspecting the network is an easy way to find out the container’s IP address.
+```
+$ docker network inspect bridge
+```
+
+
+Show all mapped ports
+```
+docker port <container-name/ID>
+```
+
+add new port to a running container
+```
+docker run -d -p 4000:4000 --name mytest mistytest
+
+docker container stop mytest
+
+docker container start mytest # same port
+
+docker container stop mytest
+
+docker container run -p 4001:4000 mytest # Now mapping container port 4000 to host port 4001
+```
+
+
 
 ## 1 project outline    
 section2: working with docker images  
