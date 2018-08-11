@@ -3,6 +3,21 @@
 
 ## docker commands
 
+
+use volumes to presist data in local machine as it will mount host folder to vm
+```
+volumes
+
+Mount host folders or named volumes. Named volumes need to be specified with the top-level volumes key.
+```
+
+show docker logs
+```
+docker logs [OPTIONS] CONTAINER
+
+```
+
+
 ```
 docker ps
 ```
@@ -48,6 +63,23 @@ Show all mapped ports
 ```
 docker port <container-name/ID>
 ```
+
+show all containers
+```
+docker ps -a
+```
+
+Remove all stopped containers
+```
+$ docker rm $(docker ps -a -q)
+```
+
+
+remove an image
+```
+docker rmi  imageID
+```
+
 
 add new port to a running container
 ```
