@@ -4,6 +4,65 @@
 ## docker commands
 
 
+share data between host and docker
+```sh
+docker volume ls
+
+DRIVER              VOLUME NAME
+local               mariadb_data
+local               suitecrm_data
+
+# then use 
+docker inspect suitecrm_data # or other volumn name
+# then we see
+"Mounts": [
+            {
+                "Type": "volume",
+                "Name": "mariadb_data",
+                "Source": "/var/lib/docker/volumes/mariadb_data/_data",
+                "Destination": "/bitnami",
+                "Driver": "local",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": ""
+            } 
+
+# Remove a volume:
+$ docker volume rm my-vol
+
+```
+
+How to edit file after I shell to a docker container?
+```sh
+If you don\'t want to add an editor just to make a few small changes (e.g., change tomcat config), you can just
+
+docker cp <container>:/path/to/file.ext .
+
+which copies it to your local machine (to your current directory). Then edit the file locally using your favorite editor, and then do a
+
+docker cp file.ext <container>:/path/to/file.ext
+
+to replace the old file.
+```
+
+debug
+```sh
+Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock
+
+sudo usermod -a -G docker $USER
+```
+After doing that, you should be able to run the command without any issues. Run 
+
+```sh
+docker run hello-world 
+```
+as a normal user in order to check if it works. Reboot if the issue still persists.
+
+
+
+Logging out and logging back in is required because the group change will not have an effect unless your session is closed.
+```
+
 use volumes to presist data in local machine as it will mount host folder to vm
 ```
 volumes
@@ -14,6 +73,30 @@ Mount host folders or named volumes. Named volumes need to be specified with the
 show docker logs
 ```
 docker logs [OPTIONS] CONTAINER
+
+--follow , -f		 Follow log output
+--since		         Show logs since timestamp (e.g. 2013-01-02T13:23:37) or relative (e.g. 42m for 42 minutes)
+--tail	[number/all] Number of lines to show from the end of the logs
+```
+
+```
+
+```sh
+docker exec -it containerName/containerId bash
+docker exec -it mysql1 mysql -uroot -p     # enter password and login to mysql shell
+```
+
+shared filesystems
+```sh
+VOLUME (shared filesystems)
+-v=[]: Create a bind mount with: [host-dir:]container-dir[:rw|ro].
+       If 'host-dir' is missing, then docker creates a new volume.
+       If neither 'rw' or 'ro' is specified then the volume is mounted
+       in read-write mode.
+--volumes-from="": Mount all volumes from the given container(s)
+
+example:
+
 
 ```
 
