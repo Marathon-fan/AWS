@@ -1,9 +1,10 @@
 
 
-# Kinesis  ----= managed Kafka 
+## Kinesis Streams  
 
+like **managed Kafka** 
 
-## 1 partition key  
+### 1 partition key  
 ```
 assigned to the data record by the data producer
 used for partitioning of data across shards
@@ -11,13 +12,13 @@ md5 hash determines shards
 ```
 
 
-## 2 sequence Number  
+### 2 sequence Number  
 ```
 unique identifier of a data record
 assigned by kinesis on write
 ```
 
-## 3 shard   
+### 3 shard   
 ```
 a shard is a group of data records in a stream
 a stream is composed of multiple shards
@@ -26,7 +27,7 @@ each shard provides a fixed unit of capacity
 each shard ingests up to 1 MB/sec of data up to 1000 records/sec
 ```
 
-## remarks
+### remarks
 
 1 understand the consequences of the limits    
    shards (=Capacity), number of consumers, latency, etc    
@@ -37,4 +38,19 @@ each shard ingests up to 1 MB/sec of data up to 1000 records/sec
 3 choose the right access library for your use-case
     HTTP, SDK, Client, Producer, Connector, Third party
 
+
+
+## Kinesis Data Firehose   
+
+**Load massive volumes of streaming data into Amazon S3 and Redshift**
         
+Amazon Kinesis Data Firehose is the easiest way to reliably load streaming data into data stores and analytics tools. 
+
+
+## Kinesis Data Analytics   
+
+**Analyze data streams using SQL queries**
+
+Data Analytics
+
+
